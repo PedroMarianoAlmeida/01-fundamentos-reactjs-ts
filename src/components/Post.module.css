@@ -1,0 +1,129 @@
+.post {
+    background-color: var(--gray-800);
+    border-radius: 8px;
+    padding: 2.5rem;
+
+
+    .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            .authorInfo {
+                display: flex;
+                flex-direction: column;
+
+                .username {
+                    color: var(--gray-100);
+                    line-height: 1.6;
+                }
+
+                .role {
+                    font-size: 0.875rem;
+                    color: var(--gray-400);
+                    line-height: 1.6;
+
+                }
+            }
+        }
+
+        .time {
+            font-size: 0.875rem;
+            color: var(--gray-400);
+        }
+
+    }
+
+    .content {
+        line-height: 1.6;
+        color: var(--gray-300);
+        margin-top: 1.5rem;
+
+        p {
+            margin-top: 1rem;
+
+            a {
+                font-weight: 600;
+                color: var(--green-500);
+
+                &:hover {
+                    transition: color 0.3s;
+                    color: var(--green-300);
+                }
+            }
+        }
+    }
+
+    .commentForm {
+        width: 100%;
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--gray-600);
+
+        .title {
+            color: var(--gray-100);
+            line-height: 1.6;
+        }
+
+        .comment {
+            width: 100%;
+            background-color: var(--gray-900);
+            border: 0;
+            padding: 1rem;
+            resize: none;
+            height: 6rem;
+            border-radius: 8px;
+            color: var(--gray-100);
+            line-height: 1.4;
+            margin-top: 1.4rem;
+        }
+
+        .divBtn {
+            visibility: hidden;
+            max-height: 0;
+
+            .commentButton {
+                color: var(--white);
+                margin-top: 1rem;
+                font-weight: 600;
+                padding: 1rem 1.5rem;
+                background-color: var(--green-500);
+                border: 0;
+                border-radius: 8px;
+                transform: scale(1);
+                transition: background-color 0.3s;
+
+                &:not(:disabled):hover {
+                    background-color: var(--green-300);
+                    transition: background-color 0.3s;
+                    transform: scale(0.95);
+
+                }
+                &:disabled{
+                    opacity: 0.7;
+                    cursor: not-allowed;
+                }
+            }
+        }
+
+        &:focus-within .divBtn{
+            visibility: visible;
+            max-height: none;
+        }
+
+    }
+
+    .commentList{
+        margin-top: 2rem;
+    }
+
+}
+
+.post+.post {
+    margin-top: 2rem;
+}
